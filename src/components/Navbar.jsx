@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { GrDown } from "react-icons/gr";
+import Menus from "./Menus";
 
 const Navbar = () => {
   return (
@@ -11,17 +10,9 @@ const Navbar = () => {
       <nav>
         <ul className='flex space-x-6'>
           <Link to='/'>Home</Link>
+          <Link to='/shop/all'>Shop</Link>
           <li className='flex dropdown' style={{ cursor: "pointer" }}>
-            Shop
-            <span className='flex items-end ml-1 text-2xl'>
-              <GrDown />
-            </span>
-          </li>
-          <li className='flex dropdown' style={{ cursor: "pointer" }}>
-            Categories
-            <span className='flex items-end ml-1 text-2xl'>
-              <GrDown />
-            </span>
+            <Menus />
           </li>
           <Link to='/blogs'>Blogs</Link>
           <Link to='/contact'>Contact</Link>

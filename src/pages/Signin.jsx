@@ -1,4 +1,5 @@
-import kids from "../assets/kids.png";
+import saly from "../assets/saly.png";
+import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
@@ -6,14 +7,18 @@ import { AiFillLock } from "react-icons/ai";
 
 const Signin = () => {
   return (
-    <div className='max-w-7xl mx-auto flex flex-row my-14 space-x-12'>
-      <img src={kids} alt='An SVG art trying to login' className='w-auto' />
-      <div className='basis-1/2 text-center'>
+    <div className='max-w-7xl mx-auto flex my-14 space-x-16 justify-center'>
+      <img
+        src={saly}
+        alt='An SVG art trying to login'
+        className='w-auto h-96'
+      />
+      <div className=' text-center w-1/3 px-9'>
         <div className='text-4xl font-bold'>Sign In</div>
-        <button className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-orange-500 rounded-full shadow flex items-center mx-auto mt-6 mb-3'>
+        <button className='bg-white hover:bg-orange-100 text-gray-800 font-semibold py-2 px-4 border border-orange-500 rounded-full shadow flex items-center mx-auto mt-6 mb-3'>
           <FcGoogle className='mr-2' /> Login with Google
         </button>
-        <button className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-orange-500 rounded-full shadow flex items-center mx-auto my-3'>
+        <button className='bg-white hover:bg-orange-100 text-gray-800 font-semibold py-2 px-4 border border-orange-500 rounded-full shadow flex items-center mx-auto my-3'>
           <FaFacebook className='mr-2' style={{ color: "	#4267B2" }} />
           Login with Facebook
         </button>
@@ -42,7 +47,15 @@ const Signin = () => {
             />
           </div>
           <div className='flex justify-between'>
-            <div className='text-sm text-orange-500 text-left'>Remember me</div>
+            <div className='flex align-center'>
+              <input type='checkbox' name='remember' id='remember' />
+              <label
+                className='text-sm text-orange-500 text-left -mt-1 ml-1'
+                htmlFor='remember'
+              >
+                Remember me
+              </label>
+            </div>
             <div className='text-sm text-slate-600 text-right'></div>
             Forgot Password?
           </div>
@@ -52,7 +65,12 @@ const Signin = () => {
             </button>
             <div className='text-sm my-2'>
               Don't have an account?{" "}
-              <span className='text-orange-500'>SignUp</span>
+              <Link
+                to='/signup'
+                className='text-orange-500 border-b-2 border-orange-500'
+              >
+                SignUp
+              </Link>
             </div>
           </div>
         </form>

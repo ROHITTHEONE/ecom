@@ -8,6 +8,7 @@ import ErrorPage from "./pages/ErrorPage";
 import Kids from "./pages/categories/Kids";
 import Men from "./pages/categories/Men";
 import Women from "./pages/categories/Women";
+import AllProducts from "./pages/shop/AllProducts";
 import "./App.css";
 import TopBanner from "./components/TopBanner";
 import Navbar from "./components/Navbar";
@@ -24,6 +25,9 @@ function App() {
         <Route path='signup' element={<Signup />} />
         <Route path='blogs' element={<Blogs />} />
         <Route path='contact' element={<Contact />} />
+        <Route path='/shop'>
+          <Route path='all' element={<AllProducts />} />
+        </Route>
         <Route path='categories'>
           <Route path='kids' element={<Kids />} />
           <Route path='men' element={<Men />} />
